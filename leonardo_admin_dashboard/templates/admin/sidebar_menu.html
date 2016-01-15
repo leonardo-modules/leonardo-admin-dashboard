@@ -1,0 +1,8 @@
+{% load menu %}
+
+{% get_sidebar_menu as sidebar_menu %}
+{% for module in sidebar_menu %}
+    <li class="sidebar-menu-item no-horizontal-padding">
+    {{ module.render }}
+    </li>
+{% endfor %}

@@ -1,0 +1,27 @@
+{% load i18n %}
+
+{% if module.show_title %}
+<span class="sidebar-menu-item-title">{{ module.title }}</span>
+{% endif %}
+
+{% if module.children %}
+    {% if module.layout == "stacked" %}
+        <ul class="sidebar-menu-item-list compact">
+            {% for link in module.children %}
+                <li class="sidebar-menu-item-list-item">
+                    <a class="sidebar-menu-item-list-item-link" href="{{ link.url }}">{% if link.external %}<span class="sidebar-menu-item-list-item-icon {{ link.icon }}"></span> {% endif %}{% if link.icon %}<span class="sidebar-menu-item-list-item-icon {{ link.icon }}"></span>{% endif %} {{ link.title }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% elif module.layout == "inline" %}
+        <div class="padding center">
+            <ul class="inline">
+                {% for link in module.children %}
+                    <li>
+                        <a href="{{ link.url }}" class="nowrap">{% if link.external %}<span class="icon-open-external"></span> {% endif %}{{ link.title }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+{% endif %}

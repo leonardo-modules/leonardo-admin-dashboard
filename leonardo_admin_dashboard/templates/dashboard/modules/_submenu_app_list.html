@@ -1,0 +1,27 @@
+{% load i18n %}
+
+{% for app in module.children %}
+    <div class="sidebar-popup-item" id="sidebar-popup-item-{{ app.app_label }}">
+        <div class="sidebar-popup-title">
+            {% if app.name != app.app_label|capfirst|escape %}{{ app.name }}{% else %}{% trans app.app_label as app_label %}{{ app_label|capfirst|escape }}{% endif %}
+        </div>
+
+        <input class="sidebar-popup-search" placeholder="Search...">
+
+        <ul class="sidebar-popup-list">
+            <li class="sidebar-popup-list-item app-{{ app.app_label }}{{ app.current|yesno:" current," }}">
+                <a href="{{ app.app_url }}" class="sidebar-popup-list-item-link">{% trans 'Application page' %}</a>
+            </li>
+
+            {% for model in app.models %}
+                <li class="sidebar-popup-list-item model-{{ model.object_name|lower }}{{ model.current|yesno:" current," }}">
+                    {% if model.admin_url %}
+                        <a href="{{ model.admin_url }}" class="sidebar-popup-list-item-link">{{ model.name }}</a>
+                    {% else %}
+                        {{ model.name }}
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endfor %}

@@ -1,0 +1,22 @@
+{% load i18n %}
+
+<div class="sidebar-popup-item" id="sidebar-popup-item-1-{{ module.title|slugify }}">
+    <div class="sidebar-popup-title">
+        {{ module.title }}
+    </div>
+
+    <input class="sidebar-popup-search" placeholder="Search...">
+
+    <ul class="sidebar-popup-list">
+
+        {% for model in module.children %}
+            <li class="sidebar-popup-list-item model-{{ model.object_name|lower }}{{ model.current|yesno:" current," }}">
+                {% if model.admin_url %}
+                    <a href="{{ model.admin_url }}" class="sidebar-popup-list-item-link">{{ model.name }}</a>
+                {% else %}
+                    {{ model.name }}
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+</div>

@@ -1,0 +1,21 @@
+{% load i18n %}
+
+{% if module.children %}
+
+<div class="sidebar-popup-item" id="sidebar-popup-item-1-{{ module.title|slugify }}">
+    <div class="sidebar-popup-title">
+        {{ module.title }}
+    </div>
+
+    <input class="sidebar-popup-search" placeholder="Search...">
+
+    <ul class="sidebar-popup-list">
+
+        {% for link in module.children %}
+            <li class="sidebar-popup-list-item model-{{ link.title|slugify }}">
+                <a href="{{ link.url }}" class="sidebar-popup-list-item-link">{% if link.icon %}<span class="sidebar-menu-item-list-item-icon {{ link.icon }}"></span>{% endif %}{{ link.title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endif %}

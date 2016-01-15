@@ -1,0 +1,18 @@
+{% load i18n %}
+
+{% if module.show_title %}
+<span class="sidebar-menu-item-title">{{ module.title }}</span>
+{% endif %}
+
+<ul class="sidebar-menu-item-list apps-list-pinned">
+    {% for app in module.children %}
+        <li class="sidebar-menu-item-list-item app-item pinned app-{{ app.app_label }}" data-app-label="{{ app.app_label }}">
+            <a href="{{ app.app_url }}" class="sidebar-menu-item-list-item-link popup-item-link" data-popup-item-id="sidebar-popup-item-{{ app.app_label }}">
+                <span class="sidebar-menu-item-list-item-arrow icon-arrow-right"></span>
+                <span class="sidebar-menu-item-list-item-link-pin icon-star pin-toggle"></span>
+                <span class="sidebar-menu-item-list-item-link-unpin icon-cross pin-toggle"></span>
+                {% if app.name != app.app_label|capfirst|escape %}{{ app.name }}{% else %}{% trans app.app_label as app_label %}{{ app_label|capfirst|escape }}{% endif %}
+            </a>
+        </li>
+    {% endfor %}
+</ul>
