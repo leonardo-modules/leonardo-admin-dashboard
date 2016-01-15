@@ -22,16 +22,13 @@ This module requires ``dashboard_menu`` item in ``LEONARDO_CONF_SPEC``::
 
     LEONARDO_CONF_SPEC = {
         'dashboard_menu': []
-        'dashboard_available': [],
-        'dashboard_available_widgets': [],
-        'dashboard_widgets': []        
     }
 
-Optionaly you can add dashboard widgets:
+Optionaly you can add dashboard widgets::
 
     LEONARDO_CONF_SPEC = {
         'dashboard_widgets_available': [],
-        'dashboard_widgets': []        
+        'dashboard_widgets': []
     }
 
 Usage
