@@ -23,7 +23,7 @@ MENU = [
     ),
     modules.MenuModelList(
         _('Web'),
-        models=('web.*', ),
+        models=('web.*', 'sites.*'),
         exclude=('web.WidgetDimension', 'PageDimension',),
         column=2,
         order=0
