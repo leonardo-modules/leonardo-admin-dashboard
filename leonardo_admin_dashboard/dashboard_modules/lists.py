@@ -141,3 +141,7 @@ class MenuModelList(RenderMixin, ModelList):
     footer = True
     template = 'dashboard/modules/menu_model_list.html'
     template_footer = 'dashboard/modules/_menu_model_list.html'
+
+    def __init__(self, *args, **kw):
+        self.index_url = kw.pop('index_url', '')
+        super(MenuModelList, self).__init__(*args, **kw)

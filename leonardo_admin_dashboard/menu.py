@@ -1,8 +1,8 @@
+
 from django.core.urlresolvers import reverse
 from django.utils.translation import ugettext_lazy as _
 from importlib import import_module
 from leonardo import leonardo
-
 from . import modules
 
 MENU = [
@@ -25,12 +25,14 @@ MENU = [
         _('Web'),
         models=('web.*', 'sites.*'),
         exclude=('web.WidgetDimension', 'PageDimension',),
+        index_url=lambda url=reverse('admin:index'): url + 'web/' if url.endswith('/') else url + '/web/',
         column=2,
         order=0
     ),
     modules.MenuModelList(
         _('Media'),
         models=('media.*',),
+        index_url=lambda url=reverse('admin:index'): url + 'media/' if url.endswith('/') else url + '/media/',
         column=3,
         order=10
     ),

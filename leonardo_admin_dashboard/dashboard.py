@@ -130,8 +130,18 @@ class CustomIndexDashboard(Dashboard):
 
 class CustomAppIndexDashboard(AppIndexDashboard):
 
-    '''TODO: make this useful'''
-
     def init_with_context(self, context):
         self.available_children.append(modules.LinkList)
         self.available_children.append(modules.Feed)
+
+        self.children.append(modules.ModelList(
+            title='Application models',
+            models=self.models(),
+            column=0,
+            order=0
+        ))
+        self.children.append(modules.RecentActions(
+            include_list=self.get_app_content_types(),
+            column=1,
+            order=0
+        ))
