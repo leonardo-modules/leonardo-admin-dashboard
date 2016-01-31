@@ -36,7 +36,7 @@ Usage
 
 Add your menu items into ``dashboard_menu`` array as string path to your menu::
 
-    dashboard_menu = ['leonardo_store.menu.menu_store']
+    dashboard_menu = ['leonardo_store.menu.store_menu']
 
 For menu items use modules from ``leonardo_admin_dashboard.modules``::
 
