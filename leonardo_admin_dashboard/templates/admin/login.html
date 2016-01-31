@@ -44,6 +44,9 @@
                     <label{% if form.password.field.required %} class="required"{% endif %} for="{{ form.password.id_for_label }}">{{ form.password.label }}</label> {{ form.password }}
                     <input type="hidden" name="next" value="{{ next }}" />
                 </div>
+                <div class="password-reset-link" style="margin-top: 5px;">
+                <a href="{% url 'admin:admin_sso_assignment_start' %}">{% trans "Log in using SSO (Gmail)" %}</a>
+                </div>
                 {% url 'admin_password_reset' as password_reset_url %}
                 {% if password_reset_url %}
                     <div class="password-reset-link">
