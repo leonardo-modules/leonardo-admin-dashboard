@@ -49,7 +49,7 @@
             {% filter_fieldsets_with_errors adminform as fieldsets_with_errors %}
             <div class="changeform">
                 {% if adminform.fieldsets|length > 1 or inline_admin_formsets|length > 0 %}
-                    <ul class="changeform-tabs hidden">
+                    <ul class="changeform-tabs {% if opts.model_name == "page" %}hidden{% endif %}">
                         {% for fieldset in adminform %}
                             {% is_fieldset_selected forloop.counter0 fieldsets_with_errors as selected %}
                             {% is_fieldset_with_errors forloop.counter0 fieldsets_with_errors as fieldset_with_errors %}
