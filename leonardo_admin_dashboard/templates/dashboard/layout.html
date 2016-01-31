@@ -4,6 +4,10 @@
 {% load i18n %}
 {% load staticfiles %}
 
+{% block basestyle %}
+{% include "_header.html" %}
+{% endblock %}
+
 {% block extrastyle %}
     {{ block.super }}
     <link rel="stylesheet" href="{% static "oscar/js/select2/select2.css" %}" />
@@ -47,7 +51,6 @@
 {{ block.super }}
 {# Local scripts #}
 {% block scripts %}
-    {% include "_header.html" %}
     <!-- Twitter Bootstrap -->
     <script type="text/javascript" src="{% static "oscar/js/bootstrap3/bootstrap.min.js" %}"></script>
     <!-- Oscar -->
