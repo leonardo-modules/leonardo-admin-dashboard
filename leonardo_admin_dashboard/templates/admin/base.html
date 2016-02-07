@@ -1,4 +1,4 @@
-{% load i18n admin_static jet_tags menu compress %}
+{% load i18n admin_static jet_tags menu %}
 {% get_current_language as LANGUAGE_CODE %}{% get_current_language_bidi as LANGUAGE_BIDI %}{% format_current_language LANGUAGE_CODE as LANGUAGE_CODE %}{% get_themes as THEMES %}{% get_current_theme as THEME %}{% get_current_jet_version as JET_VERSION %}
 {% block html %}<!DOCTYPE html>
 <html lang="{{ LANGUAGE_CODE|default:"en-us" }}" {% if LANGUAGE_BIDI %}dir="rtl"{% endif %}>
@@ -49,9 +49,7 @@
         var jet = jet || {};
         jet.jQuery = jQuery.noConflict(true);
     </script>
-    {% compress js %}
     <script src="{% static "jet/js/main.js" %}?v={{ JET_VERSION }}"></script>
-    {% endcompress %}
     <script src="{% static "jet/js/select2.jet.min.js" %}?v={{ JET_VERSION }}"></script>
     {% block extrahead %}{% endblock %}
 </head>
@@ -208,6 +206,20 @@
                                             </li>
                                         {% endfor %}
                                     </ul>
+                                    <script type="text/javascript">
+                                    (function ($) {
+                                        $(document).ready(function() {
+                                            var $appsList = $('.apps-list');
+                                            var $pinnedAppsList = $('.apps-list-pinned');
+                                            var $appsHide = $('.apps-hide');
+                                            console.log(localStorage['side_menu_apps_list_visible']);
+                                            if (typeof localStorage['side_menu_apps_list_visible'] === 'undefined') {
+                                                $appsList.hide();
+                                                $appsHide.text(django.gettext('Show hidden'));
+                                            }
+                                            });
+                                        })(jet.jQuery);
+                                    </script>
                                 </li>
                             {% endif %}
                             <li class="sidebar-menu-item no-horizontal-padding">
