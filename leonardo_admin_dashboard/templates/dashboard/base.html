@@ -49,9 +49,7 @@
         var jet = jet || {};
         jet.jQuery = jQuery.noConflict(true);
     </script>
-    {% compress js %}
     <script src="{% static "jet/js/main.js" %}?v={{ JET_VERSION }}"></script>
-    {% endcompress %}
     <script src="{% static "jet/js/select2.jet.min.js" %}?v={{ JET_VERSION }}"></script>
     <style type="text/css">
         #container {
