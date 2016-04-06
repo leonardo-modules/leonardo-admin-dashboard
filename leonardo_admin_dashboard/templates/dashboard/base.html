@@ -64,10 +64,10 @@
 <body class="{% if is_popup %}popup {% endif %}{% block bodyclass %}{% endblock %}">
     {% block body %}
         {% if not is_popup %}
-            <div id="container" class="container">
+            <div id="container">
         {% endif %}
 
-            <div class="content container-fluid">
+            <div class="content">
                 {% if not is_popup %}
                     {% block header %}
                         <div id="header" class="top">
