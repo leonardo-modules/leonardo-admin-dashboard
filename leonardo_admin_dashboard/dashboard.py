@@ -32,7 +32,7 @@ class CustomIndexDashboard(Dashboard):
         '''Iterate over optional widgets and regiter all'''
 
         for widget in getattr(leonardo.config,
-                              'dashboard_widgets_abailable', []):
+                              'dashboard_widgets_available', []):
             try:
                 module = '.'.join(widget.split('.')[:-1])
                 name = widget.split('.')[-1]
