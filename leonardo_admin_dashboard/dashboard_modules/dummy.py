@@ -1,22 +1,21 @@
 
 from jet.dashboard.modules import DashboardModule
-from django.utils.translation import ugettext_lazy as _
 
 
 class DummyChartWidget(DashboardModule):
     module = None
-    title = _('Dummy visitors chart')
+    title = u'Počet zákazníků za 24h'
 
     template = 'dashboard/modules/dummy_visitors_chart.html'
 
 
 class DummyVisitorsWidget(DashboardModule):
     module = None
-    title = _('Dummy Analytics visitors')
+    title = u'Počet zákazníků'
     template = 'dashboard/modules/dummy_visitors.html'
 
 
 class DummyOnlineWidget(DashboardModule):
     module = None
-    title = _('Dummy Analytics Online')
+    title = 'Počet zákazníků online'
     template = 'dashboard/modules/dummy_visitors_count.html'
