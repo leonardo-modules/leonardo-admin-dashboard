@@ -3,7 +3,7 @@
 <script type="text/javascript" src="/static/jet.dashboard/dashboard_modules/google_analytics.js"></script>
 <div class="dashboard-item-content contrast" style="height: 188px; overflow-x: auto;">
     <div class="padding center">
-        <canvas id="chart_8" style="width: 330px; height: 165px;" width="330" height="165">
+        <canvas id="chart_{{ module.model.pk }}" style="width: 330px; height: 165px;" width="330" height="165">
             <div class="chart-fillColor"></div>
             <div class="chart-strokeColor"></div>
             <div class="chart-pointColor"></div>
@@ -29,7 +29,7 @@
                 
             </div>
         </canvas>
-        <script>jet.jQuery('#chart_8').googleAnalyticsChart();</script>
+        <script>jet.jQuery('#chart_{{ module.model.pk }}').googleAnalyticsChart();</script>
     </div>
 
 </div>
