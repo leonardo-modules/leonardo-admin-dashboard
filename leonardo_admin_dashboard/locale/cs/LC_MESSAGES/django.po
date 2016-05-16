@@ -345,15 +345,6 @@ msgstr "Přidat novou položku"
 msgid "available translations"
 msgstr "Dostupné překlady"
 
-#: templates/admin/login.html:16
-#, python-format
-msgid ""
-"<span class=\"bright\">%(LEONARDO_CONFIG.site_name|default:'Leonardo CMS')s</"
-"span>"
-msgstr ""
-"<span class=\"bright\">%(LEONARDO_CONFIG.site_name|default:'Leonardo CMS')s</"
-"span>"
-
 #: templates/admin/login.html:21 templates/admin/login.html.py:59
 msgid "Log in"
 msgstr "Přihlásit"
