@@ -1,3 +1,4 @@
+# encoding: utf-8
 
 from jet.dashboard.modules import DashboardModule
 
