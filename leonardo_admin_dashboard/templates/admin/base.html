@@ -52,10 +52,6 @@
     <script src="{% static "jet/js/main.js" %}?v={{ JET_VERSION }}"></script>
     <script src="{% static "jet/js/select2.jet.min.js" %}?v={{ JET_VERSION }}"></script>
     {% block extrahead %}{% endblock %}
-    {% get_dashboard 'index' as dashboard %}
-    {% for js in dashboard.media.js %}
-        <script src="{% static js %}"></script>
-    {% endfor %}
 </head>
 <body class="{% if is_popup %}popup {% endif %}{% block bodyclass %}{% endblock %}">
     {% block body %}
