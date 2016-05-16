@@ -55,6 +55,21 @@ class CustomIndexDashboard(Dashboard):
         except:
             pass
 
+    def register_dummy(self):
+        '''Optionaly register Google Analytics'''
+
+        try:
+            from .dashboard_modules import dummy
+            self.available_children.append(
+                dummy.DummyChartWidget)
+            self.available_children.append(
+                dummy.DummyVisitorsWidget)
+            self.available_children.append(
+                dummy.DummyOnlineWidget)
+        except:
+            pass
+
+
     def init_with_context(self, context):
 
         # register some defaults
@@ -63,6 +78,9 @@ class CustomIndexDashboard(Dashboard):
 
         # optionaly register GA
         self.register_optional_ga()
+
+        # register dummy graphs
+        self.register_dummy()
 
         # register custom widgets
         self.register_available_widgets()
