@@ -13,7 +13,7 @@
 
 {% block body %}
     <div class="login-title">
-        {% blocktrans %}<span class="bright">Leonardo CMS</span>{% endblocktrans %}
+        {% blocktrans %}<span class="bright">{{ LEONARDO_CONFIG.site_name|default:'Leonardo CMS' }}</span>{% endblocktrans %}
     </div>
 
     <div class="login-container" id="content-main">

@@ -1,0 +1,467 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-05-16 23:18+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: __init__.py:13
+msgid "OAuth Client ID"
+msgstr ""
+
+#: __init__.py:15
+msgid "OAuth Client Secret"
+msgstr ""
+
+#: dashboard.py:91
+msgid "Quick Actions"
+msgstr ""
+
+#: dashboard.py:97 menu.py:16
+msgid "Return to site"
+msgstr ""
+
+#: dashboard.py:105
+msgid "Recent Actions"
+msgstr ""
+
+#: dashboard.py:113
+msgid "Latest Leonardo News"
+msgstr ""
+
+#: dashboard.py:121
+msgid "Support"
+msgstr ""
+
+#: dashboard.py:124
+msgid "Leonardo CMS"
+msgstr ""
+
+#: dashboard.py:129
+msgid "Leonardo documentation"
+msgstr ""
+
+#: dashboard.py:134
+msgid "Leonardo Packages"
+msgstr ""
+
+#: dashboard.py:139
+msgid "Report Bug or Request Feature"
+msgstr ""
+
+#: dashboard_modules/google_analytics.py:148
+msgid "Revoke access"
+msgstr ""
+
+#: dashboard_modules/google_analytics.py:154
+msgid "Grant access"
+msgstr ""
+
+#: dashboard_modules/google_analytics.py:167
+msgid "Access"
+msgstr ""
+
+#: dashboard_modules/google_analytics.py:168
+msgid "Counter"
+msgstr ""
+
+#: dashboard_modules/google_analytics.py:169
+msgid "Statistics period"
+msgstr ""
+
+#: dashboard_modules/google_analytics.py:170
+msgid "Today"
+msgstr ""
+
+#: dashboard_modules/google_analytics.py:171
+msgid "Last week"
+msgstr ""
+
+#: dashboard_modules/google_analytics.py:172
+msgid "Last month"
+msgstr ""
+
+#: dashboard_modules/google_analytics.py:173
+msgid "Last quarter"
+msgstr ""
+
+#: dashboard_modules/google_analytics.py:174
+msgid "Last year"
+msgstr ""
+
+#: dashboard_modules/google_analytics.py:185
+msgid "none"
+msgstr ""
+
+#: dashboard_modules/google_analytics.py:189
+msgid "grant access first"
+msgstr ""
+
+#: dashboard_modules/google_analytics.py:190
+msgid "counters loading failed"
+msgstr ""
+
+#: dashboard_modules/google_analytics.py:195
+msgid "Show"
+msgstr ""
+
+#: dashboard_modules/google_analytics.py:196
+msgid "Users"
+msgstr ""
+
+#: dashboard_modules/google_analytics.py:197
+msgid "Sessions"
+msgstr ""
+
+#: dashboard_modules/google_analytics.py:198
+msgid "Views"
+msgstr ""
+
+#: dashboard_modules/google_analytics.py:200
+#: dashboard_modules/google_analytics.py:208
+msgid "Group"
+msgstr ""
+
+#: dashboard_modules/google_analytics.py:201
+#: dashboard_modules/google_analytics.py:209
+msgid "By day"
+msgstr ""
+
+#: dashboard_modules/google_analytics.py:202
+#: dashboard_modules/google_analytics.py:210
+msgid "By week"
+msgstr ""
+
+#: dashboard_modules/google_analytics.py:203
+#: dashboard_modules/google_analytics.py:211
+msgid "By month"
+msgstr ""
+
+#: dashboard_modules/google_analytics.py:286
+#, python-format
+msgid ""
+"Please <a href=\"%s\">attach Google account and choose Google Analytics "
+"counter</a> to start using widget"
+msgstr ""
+
+#: dashboard_modules/google_analytics.py:290
+#, python-format
+msgid ""
+"Please <a href=\"%s\">select Google Analytics counter</a> to start using "
+"widget"
+msgstr ""
+
+#: dashboard_modules/google_analytics.py:311
+msgid "API request failed."
+msgstr ""
+
+#: dashboard_modules/google_analytics.py:313
+#, python-format
+msgid " Try to <a href=\"%s\">revoke and grant access</a> again"
+msgstr ""
+
+#: dashboard_modules/google_analytics.py:324
+msgid "Google Analytics visitors totals"
+msgstr ""
+
+#: dashboard_modules/google_analytics.py:339
+msgid "users"
+msgstr ""
+
+#: dashboard_modules/google_analytics.py:341
+msgid "sessions"
+msgstr ""
+
+#: dashboard_modules/google_analytics.py:343
+msgid "views"
+msgstr ""
+
+#: dashboard_modules/google_analytics.py:346
+#: dashboard_modules/google_analytics.py:406
+#: dashboard_modules/google_analytics.py:456
+msgid "Bad server response"
+msgstr ""
+
+#: dashboard_modules/google_analytics.py:356
+msgid "Google Analytics visitors chart"
+msgstr ""
+
+#: dashboard_modules/google_analytics.py:416
+msgid "Google Analytics period visitors"
+msgstr ""
+
+#: dashboard_modules/lists.py:66
+msgid "Menu Links"
+msgstr ""
+
+#: dashboard_modules/lists.py:74
+msgid "Link"
+msgstr ""
+
+#: dashboard_modules/lists.py:75
+msgid "Links"
+msgstr ""
+
+#: menu.py:10
+msgid "Quick links"
+msgstr ""
+
+#: menu.py:17 templates/admin/base.html:120
+#: templates/admin/change_form.html:17
+#: templates/admin/constance/change_list.html:61
+#: templates/dashboard/base.html:128
+msgid "Home"
+msgstr ""
+
+#: menu.py:18 templates/admin/base.html:100 templates/dashboard/base.html:108
+msgid "Documentation"
+msgstr ""
+
+#: menu.py:25
+msgid "Web"
+msgstr ""
+
+#: menu.py:33
+msgid "Media"
+msgstr ""
+
+#: templates/admin/base.html:80 templates/dashboard/base.html:88
+msgid "current theme"
+msgstr ""
+
+#: templates/admin/base.html:105 templates/dashboard/base.html:113
+msgid "Change password"
+msgstr ""
+
+#: templates/admin/base.html:109 templates/dashboard/base.html:117
+msgid "Log out"
+msgstr ""
+
+#: templates/admin/base.html:183 templates/dashboard/base.html:191
+msgid "Applications"
+msgstr ""
+
+#: templates/admin/base.html:226 templates/admin/base.html.py:243
+#: templates/dashboard/base.html:220 templates/dashboard/base.html.py:237
+msgid "Add bookmark"
+msgstr ""
+
+#: templates/admin/base.html:229 templates/dashboard/base.html:223
+msgid "Title"
+msgstr ""
+
+#: templates/admin/base.html:231 templates/dashboard/base.html:225
+msgid "URL"
+msgstr ""
+
+#: templates/admin/base.html:239 templates/dashboard/base.html:233
+msgid "Delete bookmark"
+msgstr ""
+
+#: templates/admin/base.html:240 templates/dashboard/base.html:234
+msgid "Are you sure want to delete this bookmark?"
+msgstr ""
+
+#: templates/admin/base.html:244 templates/dashboard/base.html:238
+msgid "bookmarks"
+msgstr ""
+
+#: templates/admin/base.html:251 templates/admin/base.html.py:258
+#: templates/dashboard/base.html:245 templates/dashboard/base.html.py:252
+msgid "Remove"
+msgstr ""
+
+#: templates/admin/base.html:285 templates/dashboard/base.html:279
+#: templates/dashboard/modules/_submenu_app_list.html:13
+msgid "Application page"
+msgstr ""
+
+#: templates/admin/change_form.html:20
+msgid "Add"
+msgstr ""
+
+#: templates/admin/change_form.html:35
+msgid "History"
+msgstr ""
+
+#: templates/admin/change_form.html:38
+msgid "View on site"
+msgstr ""
+
+#: templates/admin/change_form.html:62
+msgid "General"
+msgstr ""
+
+#: templates/admin/constance/change_list.html:53
+msgid "Save"
+msgstr ""
+
+#: templates/admin/feincms/content_editor_with_go.html:15
+msgid "Copy content from the original"
+msgstr ""
+
+#: templates/admin/feincms/content_editor_with_go.html:19
+msgid "Region empty"
+msgstr ""
+
+#: templates/admin/feincms/content_editor_with_go.html:25
+msgid ""
+"Content from the parent site is automatically inherited. To override this "
+"behaviour, add some content."
+msgstr ""
+
+#: templates/admin/feincms/content_editor_with_go.html:33
+msgid "Add new item"
+msgstr ""
+
+#: templates/admin/feincms/item_editor.html:32
+msgid "available translations"
+msgstr ""
+
+#: templates/admin/login.html:16
+#, python-format
+msgid ""
+"<span class=\"bright\">%(LEONARDO_CONFIG.site_name|default:'Leonardo CMS')s</"
+"span>"
+msgstr ""
+
+#: templates/admin/login.html:21 templates/admin/login.html.py:59
+msgid "Log in"
+msgstr ""
+
+#: templates/admin/login.html:27
+msgid "Please correct the error below."
+msgstr ""
+
+#: templates/admin/login.html:27
+msgid "Please correct the errors below."
+msgstr ""
+
+#: templates/admin/login.html:49
+msgid "Log in using SSO (Gmail)"
+msgstr ""
+
+#: templates/admin/login.html:55
+msgid "Forgotten your password or username?"
+msgstr ""
+
+#: templates/dashboard/index.html:16 templates/dashboard/layout.html:20
+#: templates/dashboard/layout.html.py:29
+msgid "Dashboard"
+msgstr ""
+
+#: templates/dashboard/index.html:22
+msgid "Your Store Statistics"
+msgstr ""
+
+#: templates/dashboard/index.html:28
+msgid "Total Orders"
+msgstr ""
+
+#: templates/dashboard/index.html:29
+msgid "New Customers"
+msgstr ""
+
+#: templates/dashboard/index.html:30
+msgid "Total Customers"
+msgstr ""
+
+#: templates/dashboard/index.html:31
+msgid "Total Products"
+msgstr ""
+
+#: templates/dashboard/index.html:35
+msgid "Latest Orders (last 24 hours)"
+msgstr ""
+
+#: templates/dashboard/index.html:62
+msgid "Orders - Last 24 Hours"
+msgstr ""
+
+#: templates/dashboard/index.html:65 templates/dashboard/index.html.py:92
+msgid "Total orders"
+msgstr ""
+
+#: templates/dashboard/index.html:69 templates/dashboard/index.html.py:96
+msgid "Total lines"
+msgstr ""
+
+#: templates/dashboard/index.html:73 templates/dashboard/index.html.py:100
+msgid "Total revenue"
+msgstr ""
+
+#: templates/dashboard/index.html:77
+msgid "Average order costs"
+msgstr ""
+
+#: templates/dashboard/index.html:87 templates/dashboard/index.html.py:136
+msgid "Manage"
+msgstr ""
+
+#: templates/dashboard/index.html:89
+msgid "Orders - All Time"
+msgstr ""
+
+#: templates/dashboard/index.html:104 templates/dashboard/index.html.py:122
+msgid "Total <em>open</em> baskets"
+msgstr ""
+
+#: templates/dashboard/index.html:112
+msgid "Customers"
+msgstr ""
+
+#: templates/dashboard/index.html:114
+msgid "Total customers"
+msgstr ""
+
+#: templates/dashboard/index.html:118
+msgid "New customers"
+msgstr ""
+
+#: templates/dashboard/index.html:141
+msgid "View Stock Alerts"
+msgstr ""
+
+#: templates/dashboard/index.html:145
+msgid "Catalogue and stock"
+msgstr ""
+
+#: templates/dashboard/index.html:148
+msgid "Total products"
+msgstr ""
+
+#: templates/dashboard/index.html:152
+msgid "<em>Open</em> stock alerts"
+msgstr ""
+
+#: templates/dashboard/index.html:156
+msgid "<em>Closed</em> stock alerts"
+msgstr ""
+
+#: templates/dashboard/index.html:164
+msgid "Offers, vouchers and promotions"
+msgstr ""
+
+#: templates/dashboard/index.html:166
+msgid "Active <em>Site</em> Offers"
+msgstr ""
+
+#: templates/dashboard/index.html:170
+msgid "Active <em>Vouchers</em>"
+msgstr ""
+
+#: templates/dashboard/index.html:173
+msgid "Promotions"
+msgstr ""
