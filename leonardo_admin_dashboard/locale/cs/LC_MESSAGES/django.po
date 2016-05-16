@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-16 23:18+0200\n"
+"POT-Creation-Date: 2016-05-16 23:31+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -61,6 +61,18 @@ msgstr "Balíčky pro Leonardo"
 #: dashboard.py:139
 msgid "Report Bug or Request Feature"
 msgstr "Nahlásit chybu nebo požádat o novou funkcionalitu"
+
+#: dashboard_modules/dummy.py:9
+msgid "Visitors totals chart (dummy)"
+msgstr "Počet zákazníků za poslecních 24h"
+
+#: dashboard_modules/dummy.py:16
+msgid "Visitors totals (dummy)"
+msgstr "Přehled"
+
+#: dashboard_modules/dummy.py:22
+msgid "Visitors totals count (dummy)"
+msgstr "Přehled zákazníků"
 
 #: dashboard_modules/google_analytics.py:148
 msgid "Revoke access"
@@ -321,7 +333,9 @@ msgstr "Region je prázdný"
 msgid ""
 "Content from the parent site is automatically inherited. To override this "
 "behaviour, add some content."
-msgstr "Obsah z nadřazené stránky je automaticky zděděn. Pro přepsaní vložte nějaký obsah."
+msgstr ""
+"Obsah z nadřazené stránky je automaticky zděděn. Pro přepsaní vložte nějaký "
+"obsah."
 
 #: templates/admin/feincms/content_editor_with_go.html:33
 msgid "Add new item"
