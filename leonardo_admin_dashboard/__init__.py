@@ -16,6 +16,18 @@ LEONARDO_CONFIG = {
 }
 
 
+def is_sso_auth_enabled(request):
+    try:
+        import leonardo_admin_sso
+        return True
+    except ImportError:
+        return False
+
+LEONARDO_EXTRA_CONTEXT = {
+    'is_sso_auth_enabled': is_sso_auth_enabled
+}
+
+
 class Config(AppConfig):
     name = 'leonardo_admin_dashboard'
     verbose_name = "leonardo-admin-dashboard"
