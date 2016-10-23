@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-16 23:31+0200\n"
+"POT-Creation-Date: 2016-10-23 18:02+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,7 +29,7 @@ msgstr ""
 msgid "Quick Actions"
 msgstr ""
 
-#: dashboard.py:97 menu.py:16
+#: dashboard.py:97
 msgid "Return to site"
 msgstr ""
 
@@ -227,77 +227,94 @@ msgid "Links"
 msgstr ""
 
 #: menu.py:10
-msgid "Quick links"
+msgid "Web content"
 msgstr ""
 
-#: menu.py:17 templates/admin/base.html:120
+#: templates/admin/base.html:55
+msgid "Welcome,"
+msgstr ""
+
+#: templates/admin/base.html:60 templates/admin/base.html.py:164
+msgid "View site"
+msgstr ""
+
+#: templates/admin/base.html:65 templates/admin/base.html.py:173
+#: templates/dashboard/base.html:108
+msgid "Documentation"
+msgstr ""
+
+#: templates/admin/base.html:69 templates/dashboard/base.html:113
+msgid "Change password"
+msgstr ""
+
+#: templates/admin/base.html:71 templates/dashboard/base.html:117
+msgid "Log out"
+msgstr ""
+
+#: templates/admin/base.html:80 templates/admin/base.html.py:156
 #: templates/admin/change_form.html:17
-#: templates/admin/constance/change_list.html:61
+#: templates/admin/constance/change_list.html:73
 #: templates/dashboard/base.html:128
 msgid "Home"
 msgstr ""
 
-#: menu.py:18 templates/admin/base.html:100 templates/dashboard/base.html:108
-msgid "Documentation"
+#: templates/admin/base.html:133
+msgid "back"
 msgstr ""
 
-#: menu.py:25
-msgid "Web"
-msgstr ""
-
-#: menu.py:33
-msgid "Media"
-msgstr ""
-
-#: templates/admin/base.html:80 templates/dashboard/base.html:88
-msgid "current theme"
-msgstr ""
-
-#: templates/admin/base.html:105 templates/dashboard/base.html:113
-msgid "Change password"
-msgstr ""
-
-#: templates/admin/base.html:109 templates/dashboard/base.html:117
-msgid "Log out"
-msgstr ""
-
-#: templates/admin/base.html:183 templates/dashboard/base.html:191
+#: templates/admin/base.html:228 templates/dashboard/base.html:191
 msgid "Applications"
 msgstr ""
 
-#: templates/admin/base.html:226 templates/admin/base.html.py:243
+#: templates/admin/base.html:255
+msgid "Hide applications"
+msgstr ""
+
+#: templates/admin/base.html:256
+msgid "Show hidden"
+msgstr ""
+
+#: templates/admin/base.html:285 templates/admin/base.html.py:304
 #: templates/dashboard/base.html:220 templates/dashboard/base.html.py:237
 msgid "Add bookmark"
 msgstr ""
 
-#: templates/admin/base.html:229 templates/dashboard/base.html:223
+#: templates/admin/base.html:288 templates/dashboard/base.html:223
 msgid "Title"
 msgstr ""
 
-#: templates/admin/base.html:231 templates/dashboard/base.html:225
+#: templates/admin/base.html:290 templates/dashboard/base.html:225
 msgid "URL"
 msgstr ""
 
-#: templates/admin/base.html:239 templates/dashboard/base.html:233
+#: templates/admin/base.html:298 templates/dashboard/base.html:233
 msgid "Delete bookmark"
 msgstr ""
 
-#: templates/admin/base.html:240 templates/dashboard/base.html:234
+#: templates/admin/base.html:299 templates/dashboard/base.html:234
 msgid "Are you sure want to delete this bookmark?"
 msgstr ""
 
-#: templates/admin/base.html:244 templates/dashboard/base.html:238
+#: templates/admin/base.html:306 templates/dashboard/base.html:238
 msgid "bookmarks"
 msgstr ""
 
-#: templates/admin/base.html:251 templates/admin/base.html.py:258
+#: templates/admin/base.html:314 templates/admin/base.html.py:321
 #: templates/dashboard/base.html:245 templates/dashboard/base.html.py:252
 msgid "Remove"
 msgstr ""
 
-#: templates/admin/base.html:285 templates/dashboard/base.html:279
+#: templates/admin/base.html:329
+msgid "powered by Leonardo CMS"
+msgstr ""
+
+#: templates/admin/base.html:357 templates/dashboard/base.html:279
 #: templates/dashboard/modules/_submenu_app_list.html:13
 msgid "Application page"
+msgstr ""
+
+#: templates/admin/base.html:381 templates/dashboard/base.html:88
+msgid "current theme"
 msgstr ""
 
 #: templates/admin/change_form.html:20
@@ -312,11 +329,7 @@ msgstr ""
 msgid "View on site"
 msgstr ""
 
-#: templates/admin/change_form.html:62
-msgid "General"
-msgstr ""
-
-#: templates/admin/constance/change_list.html:53
+#: templates/admin/constance/change_list.html:65
 msgid "Save"
 msgstr ""
 
@@ -340,13 +353,6 @@ msgstr ""
 
 #: templates/admin/feincms/item_editor.html:32
 msgid "available translations"
-msgstr ""
-
-#: templates/admin/login.html:16
-#, python-format
-msgid ""
-"<span class=\"bright\">%(LEONARDO_CONFIG.site_name|default:'Leonardo CMS')s</"
-"span>"
 msgstr ""
 
 #: templates/admin/login.html:21 templates/admin/login.html.py:59
@@ -476,4 +482,8 @@ msgstr ""
 
 #: templates/dashboard/index.html:173
 msgid "Promotions"
+msgstr ""
+
+#: templates/dashboard/modules/_menu_model_list.html:8
+msgid "Search..."
 msgstr ""

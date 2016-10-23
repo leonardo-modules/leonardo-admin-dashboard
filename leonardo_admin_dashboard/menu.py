@@ -6,36 +6,25 @@ from leonardo import leonardo
 from . import modules
 
 MENU = [
-    modules.MenuLinkList(
-        _('Quick links'),
-        draggable=False,
-        deletable=False,
-        collapsible=False,
-        post_content=True,
-        children=[
-            [_('Return to site'), '/', 'icon-open-external'],
-            [_('Home'), reverse('admin:index'), 'icon-data'],
-            [_('Documentation'), reverse('django-admindocs-docroot'),
-             'icon-book'],
-        ],
-        column=0,
-        order=0
-    ),
     modules.MenuModelList(
-        _('Web'),
-        models=('web.*', 'sites.*'),
-        exclude=('web.WidgetDimension', 'PageDimension',),
-        index_url=lambda url=reverse('admin:index'): url + 'web/' if url.endswith('/') else url + '/web/',
+        _('Web content'),
+        models=('web.*', 'sites.*', 'media.*', "leonardo_module_links.*",),
+        exclude=('web.WidgetDimension', 'web.PageColorScheme',
+                 "leonardo_module_links.Link",
+                 'web.PageDimension', 'media.Clipboard',
+                 'media.Document', 'media.Image', "media.FolderPermission",
+                 "media.File",
+                 "media.FolderTranslation",
+                 "media.Vector",
+                 "media.Video",
+                 "media.Flash",
+                 "media.ImageTranslation", "web.WidgetContentTheme",
+                 "web.WidgetBaseTheme",
+                 "web.PageDimension",
+                 "web.PageTheme",),
         column=2,
         order=0
-    ),
-    modules.MenuModelList(
-        _('Media'),
-        models=('media.*',),
-        index_url=lambda url=reverse('admin:index'): url + 'media/' if url.endswith('/') else url + '/media/',
-        column=3,
-        order=10
-    ),
+    )
 ]
 
 # this step requires adding dashboard_menu to LEONARDO_CONF_SPEC dictinary

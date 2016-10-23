@@ -389,7 +389,11 @@
             option_wrapper.append('<div class="navi_tab" id="'+ id_base +'_tab">' +
                                    option_title +
                                    '</div>');
-            var panel = $('<fieldset class="module aligned" style="clear: both; display: none" id="' + id_base + '_body"></fieldset>');
+            var display = "display: none"
+            if (idx === 0) {
+                display = ''
+            }
+            var panel = $('<fieldset class="module aligned" style="clear: both; ' + display + '" id="' + id_base + '_body"></fieldset>');
             panel.html(c);
             panels.push(panel);
         });

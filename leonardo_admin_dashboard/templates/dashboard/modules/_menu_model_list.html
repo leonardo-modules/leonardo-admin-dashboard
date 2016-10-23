@@ -1,11 +1,11 @@
 {% load i18n %}
 
-<div class="sidebar-popup-item" id="sidebar-popup-item-1-{{ module.title|slugify }}">
+<div class="sidebar-popup-section sidebar-popup-section-{{ module.title|slugify }}" id="sidebar-popup-section-{{ module.title|slugify }}">
     <div class="sidebar-popup-title">
         {{ module.title }}
     </div>
 
-    <input class="sidebar-popup-search" placeholder="Search...">
+    <input class="sidebar-popup-search" placeholder={% trans "Search..." %}>
 
     <ul class="sidebar-popup-list">
 

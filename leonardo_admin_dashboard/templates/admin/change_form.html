@@ -1,5 +1,5 @@
 {% extends "admin/base_site.html" %}
-{% load i18n admin_urls admin_static admin_modify jet_tags %}
+{% load i18n admin_urls admin_static admin_modify menu feincms_tags %}
 
 {% block extrahead %}
     {{ block.super }}
@@ -9,7 +9,7 @@
 
 {% block coltype %}colM{% endblock %}
 
-{% block bodyclass %}{{ block.super }} app-{{ opts.app_label }} model-{{ opts.model_name }} change-form{% endblock %}
+{% block bodyclass %}{{ block.super }} app-{{ opts.app_label }} model-{{ opts.model_name }} {% if opts.model_name != "page" %}change-form{% endif %}{% endblock %}
 
 {% if not is_popup %}
     {% block breadcrumbs %}
@@ -32,7 +32,7 @@
                             {% block object-tools-items %}
                                 <li>
                                     {% url opts|admin_urlname:'history' original.pk|admin_urlquote as history_url %}
-                                    <a href="{% jet_add_preserved_filters history_url %}" class="historylink">{% trans "History" %}</a>
+                                    <a href="{{ history_url }}" class="historylink">{% trans "History" %}</a>
                                 </li>
                                 {% if has_absolute_url %}
                                     <li><a href="{{ absolute_url }}" class="viewsitelink">{% trans "View on site" %}</a></li>
@@ -48,34 +48,6 @@
             {% block form_top %}{% endblock %}
             {% filter_fieldsets_with_errors adminform as fieldsets_with_errors %}
             <div class="changeform">
-                {% if adminform.fieldsets|length > 1 or inline_admin_formsets|length > 0 %}
-                    <ul class="changeform-tabs {% if opts.model_name == "page" %}hidden{% endif %}">
-                        {% for fieldset in adminform %}
-                            {% is_fieldset_selected forloop.counter0 fieldsets_with_errors as selected %}
-                            {% is_fieldset_with_errors forloop.counter0 fieldsets_with_errors as fieldset_with_errors %}
-
-                            <li class="changeform-tabs-item{% if selected %} selected{% endif %}{% if fieldset_with_errors %} errors{% endif %}">
-                                <a href="#" class="changeform-tabs-item-link" data-module-id="module_{{ forloop.counter0 }}">
-                                    {% if fieldset.name %}
-                                        {{ fieldset.name }}
-                                    {% else %}
-                                        {% trans "General" %}
-                                    {% endif %}
-                                </a>
-                            </li>
-                        {% endfor %}
-                        {% for inline_admin_formset in inline_admin_formsets %}
-                            {% formset_has_errors inline_admin_formset.formset as errors %}
-
-                            
-                            <li class="changeform-tabs-item{% if errors %} errors{% endif %} {% if opts.model_name == "page" %}hidden{% endif %}">
-                                <a href="#" class="changeform-tabs-item-link" data-module-id="inline_module_{{ forloop.counter0 }}">
-                                    {{ inline_admin_formset.opts.verbose_name_plural|capfirst }}
-                                </a>
-                            </li>
-                        {% endfor %}
-                    </ul>
-                {% endif %}
 
                 {% if is_popup %}<input type="hidden" name="{{ is_popup_var }}" value="1" />{% endif %}
                 {% if to_field %}<input type="hidden" name="{{ to_field_var }}" value="{{ to_field }}" />{% endif %}
@@ -86,13 +58,12 @@
 
                 {% block field_sets %}
                     {% for fieldset in adminform %}
-                        {% is_fieldset_selected forloop.counter0 fieldsets_with_errors as selected %}
+                        {% is_fieldset_selected forloop.counter0 fieldsets_with_errors as selected %} 
                         {% is_fieldset_with_errors forloop.counter0 fieldsets_with_errors as fieldset_with_errors %}
-
                         {% if opts.model_name == "page" %}
-                        {% include "admin/feincms/fieldset.html" with index=forloop.counter0 selected=selected errors=fieldset_with_errors %}
+                        {% include "admin/feincms/fieldset.html" with fieldset=fieldset index=forloop.counter0 errors=fieldset_with_errors %}
                         {% else %}
-                        {% include "admin/includes/fieldset.html" with index=forloop.counter0 selected=selected errors=fieldset_with_errors %}
+                        {% include "admin/includes/fieldset.html" %}
                         {% endif %}
                     {% endfor %}
                 {% endblock %}
@@ -102,8 +73,13 @@
                 {% block inline_field_sets %}
                     {% for inline_admin_formset in inline_admin_formsets %}
                         {% formset_has_errors inline_admin_formset.formset as errors %}
-
-                        {% include inline_admin_formset.opts.template with index=forloop.counter0 errors=errors %}
+                        {% if opts.model_name == "page" %}
+                        <div class="hidden">
+                        {% endif %}
+                            {% include inline_admin_formset.opts.template with index=forloop.counter0 errors=errors %}
+                        {% if opts.model_name == "page" %}
+                        </div>
+                        {% endif %}
                     {% endfor %}
                 {% endblock %}
 

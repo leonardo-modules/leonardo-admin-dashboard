@@ -2,6 +2,7 @@
 {% load admin_static admin_list i18n %}
 {% load url from future %}
 {% load crispy_forms_tags %}
+{% load compress %}
 
 
 {% block extrastyle %}
@@ -25,15 +26,26 @@
     .help {
         font-weight: normal !important;
   }
-  .container {
+  #container {
     width: 100%;
+    padding: 0 0 0 250px;
   }
+
   </style>
+  <script src='{{ STATIC_URL }}horizon/lib/jquery/jquery.js' type='text/javascript' charset="utf-8"></script>
+  <script src="{{ STATIC_URL }}bootstrap/js/bootstrap.js"></script>
+{% compress css %}
+  <style type="text/scss">
+    @import "/themes/bootstrap/default/_variables.scss";
+    @import "/themes/bootstrap/default/scheme.scss";
+
+  </style>
+{% endcompress %}
+
+
 {% endblock %}
 
 {% block basestyle %}
-{% include '_header.html' %}
-{% include "leonardo/_footer.html" %}
 {% endblock %}
 
 {% block extrahead %}
