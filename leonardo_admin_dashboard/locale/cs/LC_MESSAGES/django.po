@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-23 18:02+0000\n"
+"POT-Creation-Date: 2016-10-23 18:23+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -360,25 +360,32 @@ msgstr "Přidat novou položku"
 msgid "available translations"
 msgstr "Dostupné překlady"
 
-#: templates/admin/login.html:21 templates/admin/login.html.py:59
-msgid "Log in"
-msgstr "Přihlásit"
-
-#: templates/admin/login.html:27
+#: templates/admin/login.html:21
 msgid "Please correct the error below."
 msgstr "Prosím opravte chybu uvedenou níže."
 
-#: templates/admin/login.html:27
+#: templates/admin/login.html:21
 msgid "Please correct the errors below."
 msgstr "Prosím opravte chyby uvedeny níže."
 
-#: templates/admin/login.html:49
+#: templates/admin/login.html:37
+#, python-format
+msgid ""
+"You are authenticated as %(username)s, but are not authorized to access this "
+"page. Would you like to login to a different account?"
+msgstr ""
+
+#: templates/admin/login.html:57
+msgid "Forgotten your password or username?"
+msgstr "Zapmněli jste heslo nebo uživatelské jméno ?"
+
+#: templates/admin/login.html:63
 msgid "Log in using SSO (Gmail)"
 msgstr "Přihlásit s použitím Gmail"
 
-#: templates/admin/login.html:55
-msgid "Forgotten your password or username?"
-msgstr "Zapmněli jste heslo nebo uživatelské jméno ?"
+#: templates/admin/login.html:68
+msgid "Log in"
+msgstr "Přihlásit"
 
 #: templates/dashboard/index.html:16 templates/dashboard/layout.html:20
 #: templates/dashboard/layout.html.py:29
@@ -492,4 +499,3 @@ msgstr ""
 #: templates/dashboard/modules/_menu_model_list.html:8
 msgid "Search..."
 msgstr "Hledat..."
-
