@@ -1,5 +1,9 @@
 {% extends "admin/base_site.html" %}
-{% load i18n admin_static %}
+{% load i18n static %}
+
+{% block extrastyle %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{% static "admin/css/login.css" %}" />
+{{ form.media }}
+{% endblock %}
 
 {% block bodyclass %}{{ block.super }} login{% endblock %}
 
@@ -11,58 +15,59 @@
 
 {% block breadcrumbs %}{% endblock %}
 
-{% block body %}
-    <div class="login-title">
-        <span class="bright">{{ LEONARDO_CONFIG.site_name|default:'Leonardo CMS' }}</span>
+{% block content %}
+{% if form.errors and not form.non_field_errors %}
+<p class="errornote">
+{% if form.errors.items|length == 1 %}{% trans "Please correct the error below." %}{% else %}{% trans "Please correct the errors below." %}{% endif %}
+</p>
+{% endif %}
+
+{% if form.non_field_errors %}
+{% for error in form.non_field_errors %}
+<p class="errornote">
+    {{ error }}
+</p>
+{% endfor %}
+{% endif %}
+
+<div id="content-main">
+
+{% if user.is_authenticated %}
+<p class="errornote">
+{% blocktrans trimmed %}
+    You are authenticated as {{ username }}, but are not authorized to
+    access this page. Would you like to login to a different account?
+{% endblocktrans %}
+</p>
+{% endif %}
+
+<form action="{{ app_path }}" method="post" id="login-form">{% csrf_token %}
+  <div class="form-row">
+    {{ form.username.errors }}
+    {{ form.username.label_tag }} {{ form.username }}
+  </div>
+  <div class="form-row">
+    {{ form.password.errors }}
+    {{ form.password.label_tag }} {{ form.password }}
+    <input type="hidden" name="next" value="{{ next }}" />
+  </div>
+  {% url 'reset_pwd' as password_reset_url %}
+  {% if password_reset_url %}
+  <div class="password-reset-link">
+    <a href="{{ password_reset_url }}">{% trans 'Forgotten your password or username?' %}</a>
+  </div>
+  {% endif %}
+
+    {% if LEONARDO_CONFIG.is_sso_auth_enabled %}
+    <div class="password-reset-link" style="margin-top: 5px;">
+    <a href="{% url 'admin:admin_sso_assignment_start' %}">{% trans "Log in using SSO (Gmail)" %}</a>
     </div>
+    {% endif %}
 
-    <div class="login-container" id="content-main">
-        <div class="login-container-header">
-            {% trans "Log in" %}
-        </div>
-        <div class="login-container-content">
-            <form action="{{ app_path }}" method="post" class="login-form" id="login-form">{% csrf_token %}
-                {% if form.errors and not form.non_field_errors %}
-                    <p class="errornote">
-                        {% if form.errors.items|length == 1 %}{% trans "Please correct the error below." %}{% else %}{% trans "Please correct the errors below." %}{% endif %}
-                    </p>
-                {% endif %}
+  <div class="submit-row">
+    <label>&nbsp;</label><input type="submit" value="{% trans 'Log in' %}" />
+  </div>
+</form>
 
-                {% if form.non_field_errors %}
-                    {% for error in form.non_field_errors %}
-                        <p class="errornote">
-                            {{ error }}
-                        </p>
-                    {% endfor %}
-                {% endif %}
-                <div class="form-row{% if form.username.errors %} errors{% endif %}">
-                    {{ form.username.errors }}
-                    <label{% if form.username.field.required %} class="required"{% endif %} for="{{ form.username.id_for_label }}">{{ form.username.label }}</label> {{ form.username }}
-                </div>
-                <div class="form-row{% if form.password.errors %} errors{% endif %}">
-                    {{ form.password.errors }}
-                    <label{% if form.password.field.required %} class="required"{% endif %} for="{{ form.password.id_for_label }}">{{ form.password.label }}</label> {{ form.password }}
-                    <input type="hidden" name="next" value="{{ next }}" />
-                </div>
-                {% if LEONARDO_CONFIG.is_sso_auth_enabled %}
-                <div class="password-reset-link" style="margin-top: 5px;">
-                <a href="{% url 'admin:admin_sso_assignment_start' %}">{% trans "Log in using SSO (Gmail)" %}</a>
-                </div>
-                {% endif %}
-                {% url 'admin_password_reset' as password_reset_url %}
-                {% if password_reset_url %}
-                    <div class="password-reset-link">
-                    <a href="{{ password_reset_url }}">{% trans 'Forgotten your password or username?' %}</a>
-                    </div>
-                {% endif %}
-                <div class="login-container-submit-row">
-                <label>&nbsp;</label><input type="submit" value="{% trans 'Log in' %}" />
-                </div>
-            </form>
-        </div>
-    </div>
-
-    <script type="text/javascript">
-        document.getElementById('id_username').focus()
-    </script>
+</div>
 {% endblock %}
