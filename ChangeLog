@@ -1,6 +1,18 @@
 CHANGES
 =======
 
+0.0.2
+-----
+
+* Bump django-jet version
+* Update translations
+* Fix login page
+* Upgrade to 1.0.2
+* Downgrade django-jet
+* Load jquery first. Fix broken select2
+* Remove useless translation
+* Fix dummy stuff
+* Add translations
 * Update to latest version and make admin-sso optionaly
 * Fix dash
 * Use fix
