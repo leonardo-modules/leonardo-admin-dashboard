@@ -109,13 +109,13 @@ class CustomIndexDashboard(Dashboard):
         ))
 
         # append a feed module
-        self.children.append(modules.Feed(
-            _('Latest Leonardo News'),
-            feed_url='https://www.leonardo-cms.org/en/news/feed/',
-            limit=5,
-            column=1,
-            order=1
-        ))
+        # self.children.append(modules.Feed(
+        #     _('Latest Leonardo News'),
+        #     feed_url='https://www.leonardo-cms.org/en/news/feed/',
+        #     limit=5,
+        #     column=1,
+        #     order=1
+        # ))
 
         self.children.append(modules.LinkList(
             _('Support'),
