@@ -1,2 +1,2 @@
-django-jet==1.0.4
+django-jet==1.0.8
 google-api-python-client==1.4.1
