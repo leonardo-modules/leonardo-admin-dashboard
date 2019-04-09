@@ -18,14 +18,10 @@
 
 {% if LANGUAGE_BIDI %}<link rel="stylesheet" type="text/css" href="{% block stylesheet_rtl %}{% static "admin/css/rtl.css" %}{% endblock %}" />{% endif %}
 
-{% jet_get_date_format as date_format %}
-{% jet_get_time_format as time_format %}
-{% jet_get_datetime_format as datetime_format %}
-
 <script type="text/javascript" charset="utf-8">
-    var DATE_FORMAT = "{{ date_format }}";
-    var TIME_FORMAT = "{{ time_format }}";
-    var DATETIME_FORMAT = "{{ datetime_format }}";
+    var DATE_FORMAT = "{% jet_get_date_format %}";
+    var TIME_FORMAT = "{% jet_get_time_format %}";
+    var DATETIME_FORMAT = "{% jet_get_datetime_format %}";
 </script>
 <script type="text/javascript" src="{% url 'jet:jsi18n' %}"></script>
 <script src="{% static "jet/js/build/bundle.min.js" as url %}{{ url|jet_append_version }}"></script>
@@ -110,35 +106,20 @@
 
     {% block footer %}<div id="footer"></div>{% endblock %}
 
-    {% jet_delete_confirmation_context as delete_confirmation_context %}
-    {{ delete_confirmation_context }}
+    {% jet_delete_confirmation_context %}
 
     {% jet_change_form_sibling_links_enabled as show_siblings %}
     {% if change and show_siblings %}
         <div class="changeform-navigation">
             {% spaceless %}
-                {% jet_previous_object as sibling %}
-                <a{% if sibling.url %} href="{{ sibling.url }}"{% endif %} class="changeform-navigation-button segmented-button left{% if not sibling %} disabled{% endif %}" title="{{ sibling.label }}">
-                    <span class="changeform-navigation-button-icon left icon-arrow-left"></span>
-                    <span class="changeform-navigation-button-label">
-                        {% if sibling %}
-                            {{ sibling.label }}
-                        {% else %}
-                            ---
-                        {% endif %}
-                    </span>
+                {% jet_previous_object_url as url %}
+                <a{% if url %} href="{{ url }}"{% endif %} class="segmented-button left{% if not url %} disabled{% endif %}">
+                    <span class="changeform-navigation-button icon-arrow-left"></span>
                 </a>
 
-                {% jet_next_object as sibling %}
-                <a{% if sibling.url %} href="{{ sibling.url }}"{% endif %} class="changeform-navigation-button segmented-button right{% if not sibling %} disabled{% endif %}" title="{{ sibling.label }}">
-                    <span class="changeform-navigation-button-icon right icon-arrow-right"></span>
-                    <span class="changeform-navigation-button-label">
-                        {% if sibling %}
-                            {{ sibling.label }}
-                        {% else %}
-                            ---
-                        {% endif %}
-                    </span>
+                {% jet_next_object_url as url %}
+                <a{% if url %} href="{{ url }}"{% endif %} class="segmented-button right{% if not url %} disabled{% endif %}">
+                    <span class="changeform-navigation-button icon-arrow-right"></span>
                 </a>
             {% endspaceless %}
         </div>
